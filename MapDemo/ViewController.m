@@ -63,10 +63,12 @@
     CGPoint point = [touch locationInView:_mapView];
     CLLocationCoordinate2D coordinate = [_mapView convertPoint:point toCoordinateFromView:_mapView];
     CLLocation *location = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+    WMAnnotation *annotation = [self addAnnotionWith:coordinate title:@"淼哥" subtitle:@"世界你好"];
     [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         if (!error) {
 //            NSLog(@"%@",placemarks.firstObject);
-            [self addAnnotionWith:coordinate title:placemarks.firstObject.thoroughfare subtitle:placemarks.firstObject.name];
+            annotation.subtitle = placemarks.firstObject.name;
+            annotation.title = placemarks.firstObject.thoroughfare;
         }
     }];
     
@@ -80,13 +82,14 @@
 }
 
 #pragma mark func
-- (void)addAnnotionWith:(CLLocationCoordinate2D) coordinate title:(NSString *)title subtitle:(NSString *)subtitle
+- (WMAnnotation *)addAnnotionWith:(CLLocationCoordinate2D) coordinate title:(NSString *)title subtitle:(NSString *)subtitle
 {
     WMAnnotation *annotation = [[WMAnnotation alloc] init];
     annotation.coordinate = coordinate;
     annotation.title = title;
     annotation.subtitle = subtitle;
     [self.mapView addAnnotation:annotation];
+    return annotation;
 }
 
 #pragma mark MKMapViewDelegate
