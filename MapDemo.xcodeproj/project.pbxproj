@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4411D687B1F14D64B6593068 /* libPods-MapDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E26C8F83CE7805B00BCDCED8 /* libPods-MapDemo.a */; };
 		931062C41D7D019C009E677F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 931062C31D7D019C009E677F /* main.m */; };
 		931062C71D7D019C009E677F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 931062C61D7D019C009E677F /* AppDelegate.m */; };
 		931062CA1D7D019C009E677F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 931062C91D7D019C009E677F /* ViewController.m */; };
@@ -17,6 +18,9 @@
 		931062E81D7D019D009E677F /* MapDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 931062E71D7D019D009E677F /* MapDemoUITests.m */; };
 		936D72201D7D4B9B0060BFE2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936D721F1D7D4B9B0060BFE2 /* MapKit.framework */; };
 		936D72231D7D60B20060BFE2 /* WMAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 936D72221D7D60B20060BFE2 /* WMAnnotation.m */; };
+		936D72781D7E5CE40060BFE2 /* BaiDuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 936D72771D7E5CE40060BFE2 /* BaiDuViewController.m */; };
+		936D727F1D7EACB30060BFE2 /* CustomBMKAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936D727E1D7EACB20060BFE2 /* CustomBMKAnnotationView.m */; };
+		936D72821D7EACD40060BFE2 /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 936D72811D7EACD40060BFE2 /* CityModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4AEC8CBB8005FAEF1C320118 /* Pods-MapDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapDemo/Pods-MapDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		931062BF1D7D019C009E677F /* MapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		931062C31D7D019C009E677F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		931062C51D7D019C009E677F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -56,6 +61,14 @@
 		936D721F1D7D4B9B0060BFE2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		936D72211D7D60B20060BFE2 /* WMAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMAnnotation.h; sourceTree = "<group>"; };
 		936D72221D7D60B20060BFE2 /* WMAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMAnnotation.m; sourceTree = "<group>"; };
+		936D72761D7E5CE40060BFE2 /* BaiDuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiDuViewController.h; sourceTree = "<group>"; };
+		936D72771D7E5CE40060BFE2 /* BaiDuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiDuViewController.m; sourceTree = "<group>"; };
+		936D727D1D7EACB20060BFE2 /* CustomBMKAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBMKAnnotationView.h; sourceTree = "<group>"; };
+		936D727E1D7EACB20060BFE2 /* CustomBMKAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBMKAnnotationView.m; sourceTree = "<group>"; };
+		936D72801D7EACD40060BFE2 /* CityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityModel.h; sourceTree = "<group>"; };
+		936D72811D7EACD40060BFE2 /* CityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityModel.m; sourceTree = "<group>"; };
+		9F50E0F50DFE1881D6B3DE32 /* Pods-MapDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapDemo/Pods-MapDemo.release.xcconfig"; sourceTree = "<group>"; };
+		E26C8F83CE7805B00BCDCED8 /* libPods-MapDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MapDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				936D72201D7D4B9B0060BFE2 /* MapKit.framework in Frameworks */,
+				4411D687B1F14D64B6593068 /* libPods-MapDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +98,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		056A227DCA66DC5AB9566370 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E26C8F83CE7805B00BCDCED8 /* libPods-MapDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0DAEE4FABA447E27B34425AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4AEC8CBB8005FAEF1C320118 /* Pods-MapDemo.debug.xcconfig */,
+				9F50E0F50DFE1881D6B3DE32 /* Pods-MapDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		931062B61D7D019C009E677F = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +123,8 @@
 				931062DB1D7D019D009E677F /* MapDemoTests */,
 				931062E61D7D019D009E677F /* MapDemoUITests */,
 				931062C01D7D019C009E677F /* Products */,
+				0DAEE4FABA447E27B34425AE /* Pods */,
+				056A227DCA66DC5AB9566370 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +147,12 @@
 				931062C61D7D019C009E677F /* AppDelegate.m */,
 				931062C81D7D019C009E677F /* ViewController.h */,
 				931062C91D7D019C009E677F /* ViewController.m */,
+				936D72761D7E5CE40060BFE2 /* BaiDuViewController.h */,
+				936D72771D7E5CE40060BFE2 /* BaiDuViewController.m */,
+				936D727D1D7EACB20060BFE2 /* CustomBMKAnnotationView.h */,
+				936D727E1D7EACB20060BFE2 /* CustomBMKAnnotationView.m */,
+				936D72801D7EACD40060BFE2 /* CityModel.h */,
+				936D72811D7EACD40060BFE2 /* CityModel.m */,
 				931062CB1D7D019C009E677F /* Main.storyboard */,
 				931062CE1D7D019C009E677F /* Assets.xcassets */,
 				931062D01D7D019C009E677F /* LaunchScreen.storyboard */,
@@ -156,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 931062EC1D7D019D009E677F /* Build configuration list for PBXNativeTarget "MapDemo" */;
 			buildPhases = (
+				2B0AA8F866DA4D3E124B226E /* [CP] Check Pods Manifest.lock */,
 				931062BB1D7D019C009E677F /* Sources */,
 				931062BC1D7D019C009E677F /* Frameworks */,
 				931062BD1D7D019C009E677F /* Resources */,
+				E53A8BB1E4C906A860AD20EC /* [CP] Embed Pods Frameworks */,
+				6D81A7173DE53233046B4B9E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -280,13 +322,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2B0AA8F866DA4D3E124B226E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6D81A7173DE53233046B4B9E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapDemo/Pods-MapDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E53A8BB1E4C906A860AD20EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapDemo/Pods-MapDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		931062BB1D7D019C009E677F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				936D72781D7E5CE40060BFE2 /* BaiDuViewController.m in Sources */,
 				936D72231D7D60B20060BFE2 /* WMAnnotation.m in Sources */,
 				931062CA1D7D019C009E677F /* ViewController.m in Sources */,
+				936D727F1D7EACB30060BFE2 /* CustomBMKAnnotationView.m in Sources */,
+				936D72821D7EACD40060BFE2 /* CityModel.m in Sources */,
 				931062C71D7D019C009E677F /* AppDelegate.m in Sources */,
 				931062C41D7D019C009E677F /* main.m in Sources */,
 			);
@@ -429,6 +522,7 @@
 		};
 		931062ED1D7D019D009E677F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AEC8CBB8005FAEF1C320118 /* Pods-MapDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -444,6 +538,7 @@
 		};
 		931062EE1D7D019D009E677F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F50E0F50DFE1881D6B3DE32 /* Pods-MapDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

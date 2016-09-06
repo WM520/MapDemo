@@ -8,7 +8,7 @@
         <!--导航-->
         <scene sceneID="5g0-4C-Y6B">
             <objects>
-                <viewController id="33d-pd-Sdi" sceneMemberID="viewController">
+                <viewController id="33d-pd-Sdi" customClass="BaiDuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tf0-cw-gT8"/>
                         <viewControllerLayoutGuide type="bottom" id="nZl-2Q-N4s"/>
@@ -16,13 +16,28 @@
                     <view key="view" contentMode="scaleToFill" id="Xxr-xW-iju">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D41-tQ-dEz" customClass="BMKMapView">
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="D41-tQ-dEz" secondAttribute="trailing" id="5lr-MX-gnC"/>
+                            <constraint firstItem="D41-tQ-dEz" firstAttribute="top" secondItem="tf0-cw-gT8" secondAttribute="bottom" id="cOn-je-2Kc"/>
+                            <constraint firstItem="nZl-2Q-N4s" firstAttribute="top" secondItem="D41-tQ-dEz" secondAttribute="bottom" id="czj-Iq-vdH"/>
+                            <constraint firstItem="D41-tQ-dEz" firstAttribute="leading" secondItem="Xxr-xW-iju" secondAttribute="leading" id="hBJ-qL-bUz"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="导航" id="1QN-4V-VS1"/>
+                    <connections>
+                        <outlet property="mapView" destination="D41-tQ-dEz" id="yev-me-bID"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0Y-AX-wGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="38" y="385"/>
+            <point key="canvasLocation" x="447" y="354"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5Uk-6o-ddB">
@@ -54,17 +69,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TtD-hG-cwJ">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TtD-hG-cwJ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TtD-hG-cwJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4jW-yc-YEy"/>
+                            <constraint firstAttribute="bottom" secondItem="TtD-hG-cwJ" secondAttribute="bottom" constant="49" id="XDk-Pd-PEa"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TtD-hG-cwJ" secondAttribute="bottom" id="YZK-q3-XkG"/>
                             <constraint firstItem="TtD-hG-cwJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="gnr-TH-y1a"/>
                             <constraint firstAttribute="trailing" secondItem="TtD-hG-cwJ" secondAttribute="trailing" id="u4P-HY-0cJ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="YZK-q3-XkG"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="大头针" id="mFQ-lF-7OR"/>
                     <connections>

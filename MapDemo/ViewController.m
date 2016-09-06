@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.mapView.delegate = self;
+//    self.mapView.delegate = self;
     _mapView.mapType = MKMapTypeStandard;
     _mapView.userTrackingMode = MKUserTrackingModeNone;
     _mapView.showsUserLocation = YES;
@@ -51,6 +51,22 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    _lcManager.delegate = self;
+    _mapView.delegate = self;
+    [_lcManager startUpdatingLocation];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    _lcManager.delegate = nil;
+    _mapView.delegate = nil;
+    [_lcManager stopUpdatingLocation];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -58,12 +74,14 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+    // oc中通过点击view获取经纬度
     NSSet *allTouches = [event allTouches];
     UITouch *touch = [allTouches anyObject];
     CGPoint point = [touch locationInView:_mapView];
     CLLocationCoordinate2D coordinate = [_mapView convertPoint:point toCoordinateFromView:_mapView];
     CLLocation *location = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
     WMAnnotation *annotation = [self addAnnotionWith:coordinate title:@"淼哥" subtitle:@"世界你好"];
+    // 反地理编码
     [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         if (!error) {
 //            NSLog(@"%@",placemarks.firstObject);
@@ -103,11 +121,24 @@
     NSLog(@"%f---%f", mapView.region.span.latitudeDelta, mapView.region.span.longitudeDelta);
 }
 
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    NSString * iden = @"item";
+    MKAnnotationView * annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:iden];
+    if (!annotationView) {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:iden];
+    }
+    annotationView.canShowCallout = YES;
+    annotationView.annotation = annotation;
+    annotationView.image = [UIImage imageNamed:@"Nearby_park"];
+    return annotationView;
+}
+
 #pragma mark CLLocationManagerDelegate
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
-  
+    // 模拟动态定位功能
     if (!_center.latitude) {
         CLLocationCoordinate2D center =  [[locations lastObject] coordinate];
         MKCoordinateSpan span = MKCoordinateSpanMake(0.05, 0.05);
