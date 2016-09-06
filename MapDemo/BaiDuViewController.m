@@ -80,11 +80,11 @@
     codeOption.reverseGeoPoint = _currentLocation.coordinate;
     [self.geoCodeSearch reverseGeoCode:codeOption];
     [_mapView setCenterCoordinate:_currentLocation.coordinate];
-    BMKPointAnnotation *annotation = [[BMKPointAnnotation alloc] init];
-    annotation.coordinate = _currentLocation.coordinate;
-    annotation.title = @"喵哥";
-    annotation.subtitle = @"W了个M";
-    [_mapView addAnnotation:annotation];
+//    BMKPointAnnotation *annotation = [[BMKPointAnnotation alloc] init];
+//    annotation.coordinate = _currentLocation.coordinate;
+//    annotation.title = @"喵哥";
+//    annotation.subtitle = @"W了个M";
+//    [_mapView addAnnotation:annotation];
     [_lcService stopUserLocationService];
 }
 
@@ -113,12 +113,26 @@
 
 - (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
 {
-
     NSLog(@"%@", result.address);
     CityModel *model = [[CityModel alloc] init];
     model.cityname = [result.addressDetail city];
     model.street_information = result.address;
-    self.customView.model = model;
+//    self.customView.model = model;
+    self.model = model;
+    
+    BMKPointAnnotation *annotation = [self addAnnotionView:model location:_currentLocation];
+    [_mapView addAnnotation:annotation];
+}
+
+
+#pragma mark func
+- (BMKPointAnnotation *)addAnnotionView:(CityModel *)model location:(CLLocation *)location
+{
+    BMKPointAnnotation * annotion = [[BMKPointAnnotation alloc] init];
+    annotion.title = model.cityname;
+    annotion.subtitle = model.street_information;
+    annotion.coordinate = location.coordinate;
+    return annotion;
 }
 
 #pragma mark setter and getter
